@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(148, 148, 146);
+    margin: 0;
+}
+.SignInContener{
+    background-color:#4d5152 ;
+    align-content: center;
+    margin: 50px 30%;
+    width: 400px;
+    height: 250px;
+    border-radius: 12%;
+    text-align: center;
+}
+.navbar{
+    /* display: flex; */
+    background-color: #4d5152;
+    width: 100%;
+    height: 75px;
+}
+.nav{
+    display: flex;
+    flex-shrink: 2;
+    flex-grow: 2;
+    flex-flow: unset;
+}
+.footer{
+        background-color: #4d5152;
+        height: 200px;
+        width: 100%;
+        margin-top: 80px;
+}

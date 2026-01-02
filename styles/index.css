@@ -1,29 +1,22 @@
 body{
-    background-color: rgb(148, 148, 146);
+    background-color: rgb(17, 182, 180);
     margin: 0;
 }
+/*===================nav bar=================*/
 .navbar{
-
-    /* display: flex; */
-    background-color: #4d5152;
-    /* padding: 8px 0;
-    padding: 10px 8px; 
-    padding: 10px 0px;
-    padding-top: 4px; */
+    background-color: rgba(1, 67,69,0.8);
+    width: 100%;
+    position: sticky;
+    top: 0;
     padding: 0px;
 }
 .nav{
     display: flex;
-    /* flex-shrink: 2;
-    flex-grow: 2;
-    flex-flow: unset; */
 }
 .navbar .tools{/* ul */
     list-style: none;
     display: flex;
     gap: 20px;
-    /* justify-content: end ; */
-    /* text-align:end; */
     margin-left: auto;
 
 }
@@ -31,17 +24,19 @@ body{
     list-style: none;
 }
 .navbar li {
-    width: 72px;
+    width: 80px;
     height: 25px;
-    
-    /* margin-top: 10px; */
     margin: 0px 13px;
     padding: 7px;
     padding-top: 15px;
-    /* padding: 0px; */
     text-align: center;
     color: white;
     font-size: 16px;
+}
+.navbar a:hover {
+    color: #0dade2;
+    color: rgb(47, 1, 65);
+    /* font-weight: bold; */
 }
 #Special{
     margin-right:0px ;
@@ -61,8 +56,6 @@ body{
     
 }
 .username{
-    /* padding-bottom: 10px; */
-
     margin-bottom: 0px;
     margin-top: 0px;
 }
@@ -72,13 +65,9 @@ body{
     height: 50px;
     object-fit: cover ;
     margin-top: -17px;
-    /* margin-right: auto; */
 }
-.navbar a:hover {
-    color: #0dade2;
-    color: #0dade2;
-}
-/*============================================*/
+
+/*====================table========================*/
 .wellcome{
     font-size: 50px;
     color:white;
@@ -108,22 +97,16 @@ body{
 }
 .course-contener img {
     border-radius: 20%;
-    /* background-color: rgba(177, 5, 229, 0.5); */
     width: 220px;
     height: 140px;
     object-fit: fill;
 }
 .course-description{
-    /* display: inline; */
     width: 231px;
-    /* width: fit-content; */
     height: 35px;
     padding-top: 5px;
     margin: 0;
-
-    /* display: inline; */
     width: 205px;
-    /* width: fit-content; */
     height: 34px;
     padding-top: 7px;
     margin: 0;
@@ -135,7 +118,6 @@ body{
     width: 202px;
     height: 47px;
     background-color:#a5afb9 ;
-    /* color: aliceblue; */
     color: white;
     font-size: larger;
     cursor: pointer;
@@ -151,6 +133,7 @@ body{
 .spacing{
     height: 45px;
 }
+/*================footer================*/
 .footer{
         background-color: #4d5152;
         height: 300px;
@@ -160,8 +143,13 @@ body{
 .footer-list-contener{
     display: flex;
 }
-.info-contener{
-    display: flex;
+.footer-list{
+    color: white;
+    list-style: none;
+}
+.footer-list li:hover{
+    color: #0dade2;
+    cursor: pointer;
 }
 .copyright{
     text-align: center;

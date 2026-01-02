@@ -14,7 +14,7 @@ export const courses =[
     {
         courseId:'3',
         coursename:'C-sharp (.net)',
-        image:'images/coursesImages/C-sharp.png',
+        image:'images/coursesImages/CSharp.png',
         description:'C-sharp (.net)developement full-course in udacity'
     },
     {

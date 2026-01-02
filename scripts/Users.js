@@ -6,7 +6,7 @@ export const users =[
         email:'m7mad7ader@gmail.com',
         coursesEnroll:[
             {
-                
+                //courses that user joined "this feature is not add yet"
             }
         ],
         password:'123'
@@ -18,7 +18,7 @@ export const users =[
         email:'matt@gmail.com',
         coursesEnroll:[
             {
-                
+                //courses that user joined "this feature is not add yet"
             }
         ],
         password:'789'
@@ -28,27 +28,15 @@ export let IdOfUserOnSite=JSON.parse(localStorage.getItem('id'));
 
 export function checkUser(username ,email, password){
 
-// let IsUser= false;
-let status;
-
-users.forEach((user)=>{
-if (username.value===user.username){
-    if ((email.value===user.email) && (password.value===user.password)){
-        IdOfUserOnSite=user.id;
+for(let i=0;users.length;i++){
+if (username.value===users[i].username){
+    if ((email.value===users[i].email) && (password.value===users[i].password)){
+        IdOfUserOnSite=users[i].id;
         localStorage.setItem('id',JSON.stringify(IdOfUserOnSite));
-        // IsUser = true;
-    }else{
-        window.alert('email or password is wrong');
-        // IsUser = false;
+        return true;
+        }
     }
-}else{
-    // IsUser = false;
 }
-});
-
-// return IsUser; 
-return IdOfUserOnSite;
-}
-function findUserById(){
-    
+    window.alert('email or password is wrong');
+    return false;
 }

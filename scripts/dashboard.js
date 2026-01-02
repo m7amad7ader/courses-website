@@ -1,21 +1,15 @@
-import { courses } from "./courses.js";
-import {uploudUserinfo}from'./Utils.js'
-import { addCourses } from "./Users.js";
+import{courses} from'../scripts/courses.js'
+import{users}from '../scripts/Users.js'
+import{uploudUserinfo}from'./Utils.js'
 
-const MainTable=document.querySelector('.main-table');
 
+const dashboardTableElement=document.querySelector('.dashboard-table');
 const UserImageElement=document.querySelector('#userImage');
 const UserNameElement=document.querySelector('.username');
 
 let html=``;
 let TdHtml=``;
-let courseId;
-
-
-uploudUserinfo(UserNameElement, UserImageElement);
-GenerateHtmlForIndex();
-addEventListeners();
-
+uploudUserinfo(UserNameElement,UserImageElement);
 function AddLine(){
     html+=`
     <tr>
@@ -27,8 +21,8 @@ function AddLine(){
     `;
     TdHtml=``;
 }
-
-function GenerateHtmlForIndex(){
+GenerateHtmlForDashboard();
+function GenerateHtmlForDashboard(){
     courses.forEach((course,index)=>{
     if ((index!=0)&&(index%5==0)){
         AddLine(TdHtml);
@@ -41,7 +35,7 @@ function GenerateHtmlForIndex(){
                 <img src="${course.image}" loading="lazy" alt="">
                 <p class ="course-description">${course.description}</p>
                 <br>
-                <button class="joinBtn" data-id="${course.courseId}">Join now </button>
+                <button class="joinBtn "data-id="${course.courseId}">details </button>
             </div>
         </td>
     `;
@@ -51,17 +45,6 @@ function GenerateHtmlForIndex(){
         }
     });
 
-    MainTable.innerHTML += html;
-}
-function addEventListeners(){
-    const joinBtnElements=document.querySelectorAll('.joinBtn');
-    joinBtnElements.forEach((btn)=>{
-    btn.addEventListener('click',()=>{
-    courseId =btn.dataset.id;
-    // console.log(btn.dataset);
-    
-    addCourses(courseId);
-    });
-});
+    dashboardTableElement.innerHTML += html;
 }
 

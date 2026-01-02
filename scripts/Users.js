@@ -6,7 +6,19 @@ export const users =[
         email:'m7mad7ader@gmail.com',
         coursesEnroll:[
             {
-                //courses that user joined "this feature is not add yet"
+                courseId:'1'
+            },
+            {
+                courseId:'2'
+            },
+            {
+                courseId:'10'
+            },
+            {
+                courseId:'12'
+            },
+            {
+                courseId:'7'
             }
         ],
         password:'123'
@@ -18,7 +30,7 @@ export const users =[
         email:'matt@gmail.com',
         coursesEnroll:[
             {
-                //courses that user joined "this feature is not add yet"
+                courseId:'14'
             }
         ],
         password:'789'
@@ -39,4 +51,22 @@ if (username.value===users[i].username){
 }
     window.alert('email or password is wrong');
     return false;
+}
+export function addCourses(courseId){
+    users.forEach((user)=>{
+        if (user.id==IdOfUserOnSite){
+            user.coursesEnroll.forEach((course)=>{
+                if(course.courseId==courseId){
+                    console.log('already exist');
+                }else{
+                    user.coursesEnroll.push({"courseId":courseId});
+                }
+            });
+        }
+    });
+    saveToLocalStorage();
+    // console.log(users);
+}
+function saveToLocalStorage(){
+    localStorage.setItem('users',JSON.stringify(users));
 }

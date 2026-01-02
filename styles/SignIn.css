@@ -3,7 +3,8 @@ body{
     margin: 0;
 }
 .SignInContener{
-    background-color:#4d5152 ;
+    background-color:rgb(17, 182, 180);
+    color: white;
     align-content: center;
     margin: 50px 30%;
     width: 400px;
@@ -11,17 +12,29 @@ body{
     border-radius: 12%;
     text-align: center;
 }
+
 .navbar{
-    /* display: flex; */
-    background-color: #4d5152;
+    background-color: rgba(1, 67,69,0.8);
     width: 100%;
     height: 75px;
+    position: sticky;
+    top: 0;
+    padding: 0px;
 }
-.nav{
-    display: flex;
-    flex-shrink: 2;
-    flex-grow: 2;
-    flex-flow: unset;
+.massage{
+    font-size: 15px;
+}
+.btn{
+    border: none;
+    color: brown;
+    background-color: rgba(255, 255, 255,0.4);
+    width: 150px;
+    height: 30px;
+    border-radius: 25%;
+}
+.btn:hover{
+    background-color: rgba(255, 255, 255,0.9);
+    cursor: pointer;
 }
 .footer{
         background-color: #4d5152;

@@ -1,5 +1,5 @@
-import{courses} from'../scripts/courses.js'
-import{users}from '../scripts/Users.js'
+import{courses} from'./courses.js'
+import{usercourses}from './Users.js'
 import{uploudUserinfo}from'./Utils.js'
 
 
@@ -23,11 +23,19 @@ function AddLine(){
 }
 GenerateHtmlForDashboard();
 function GenerateHtmlForDashboard(){
-    courses.forEach((course,index)=>{
-    if ((index!=0)&&(index%5==0)){
-        AddLine(TdHtml);
-        TdHtml=``;
-    }
+    
+usercourses.forEach((id,index)=>{
+    courses.forEach((course)=>{
+        // console.log(id);
+        // console.log(course.courseId);
+        
+        if (course.courseId==id){
+            // console.log(index);
+            if ((index!=0)&&(index%5==0)){
+            AddLine(TdHtml);
+            TdHtml=``;
+            }
+        
     TdHtml+=`
         <td>
             <div class="course-contener">
@@ -35,16 +43,18 @@ function GenerateHtmlForDashboard(){
                 <img src="${course.image}" loading="lazy" alt="">
                 <p class ="course-description">${course.description}</p>
                 <br>
-                <button class="joinBtn "data-id="${course.courseId}">details </button>
+                <button class="joinBtn">details </button>
             </div>
         </td>
-    `;
-    if (index==courses.length-1){
+        `;
+        // console.log(TdHtml);
+    if (index==usercourses.length-1){
         AddLine(TdHtml);
         TdHtml=``;
         }
+        }
     });
-
+});
     dashboardTableElement.innerHTML += html;
 }
 

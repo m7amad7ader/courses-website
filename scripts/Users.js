@@ -4,23 +4,13 @@ export const users =[
         username:'m7amad_7ader',
         image:'images/usersImages/m7mad.jpeg',
         email:'m7mad7ader@gmail.com',
-        coursesEnroll:[
-            {
-                courseId:'1'
-            },
-            {
-                courseId:'2'
-            },
-            {
-                courseId:'10'
-            },
-            {
-                courseId:'12'
-            },
-            {
-                courseId:'7'
-            }
-        ],
+        coursesEnrollIds:
+        JSON.parse(localStorage.getItem('coursesEnroll'))
+        ||
+        [
+            
+        ]
+        ,
         password:'123'
     },
     {
@@ -28,10 +18,8 @@ export const users =[
         username:'matt',
         image:'images/usersImages/matt.jpg',
         email:'matt@gmail.com',
-        coursesEnroll:[
-            {
-                courseId:'14'
-            }
+        coursesEnrollIds:[
+            
         ],
         password:'789'
     }
@@ -52,21 +40,31 @@ if (username.value===users[i].username){
     window.alert('email or password is wrong');
     return false;
 }
-export function addCourses(courseId){
-    users.forEach((user)=>{
-        if (user.id==IdOfUserOnSite){
-            user.coursesEnroll.forEach((course)=>{
-                if(course.courseId==courseId){
-                    console.log('already exist');
-                }else{
-                    user.coursesEnroll.push({"courseId":courseId});
-                }
-            });
+export let usercourses=JSON.parse(localStorage.getItem('coursesEnroll'));
+
+export function addCourses (courseId){
+for (let i=0;i<=users.length-1;i++){
+if (users[i].id==IdOfUserOnSite){
+    if(users[i].coursesEnrollIds){
+        let savedCourseId;
+        for (let j=0;;j++){
+            savedCourseId=users[i].coursesEnrollIds[j];
+            if(savedCourseId==courseId){
+                console.log('already exist');
+                break;
+            }else{
+                users[i].coursesEnrollIds.push(courseId);
+                localStorage.setItem('coursesEnroll',JSON.stringify(users[i].coursesEnrollIds));
+                console.log('added');
+                break;
+            }
         }
-    });
-    saveToLocalStorage();
-    // console.log(users);
+        break;
+    }
+    }
 }
-function saveToLocalStorage(){
-    localStorage.setItem('users',JSON.stringify(users));
+    // saveToLocalStorage();
 }
+// function saveToLocalStorage(){
+//     localStorage.setItem('users',JSON.stringify(users));
+// }

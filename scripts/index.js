@@ -58,7 +58,8 @@ function addEventListeners(){
     joinBtnElements.forEach((btn)=>{
     btn.addEventListener('click',()=>{
     courseId =btn.dataset.id;
-    // console.log(btn.dataset);
+    // console.log(btn.dataset.id);
+    // console.log(btn);
     
     addCourses(courseId);
     });

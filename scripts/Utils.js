@@ -8,6 +8,5 @@ export function uploudUserinfo(UserNameElement,UserImageElement){
         UserImageElement.setAttribute('src',user.image);
         }
     }
-
 });
 }

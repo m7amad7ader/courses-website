@@ -90,3 +90,4 @@ export const courses =[
         description:'english full-course in udacity'
     }
 ];
+console.log(courses);

@@ -86,3 +86,6 @@ for (let i=0;i<=users.length-1;i++){
 // function saveToLocalStorage(){
 //     localStorage.setItem('users',JSON.stringify(users));
 // }
+// courses.forEach((course)=>{
+
+// });

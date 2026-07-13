@@ -2,7 +2,7 @@ body{
     background-color: rgb(148, 148, 146);
     margin: 0;
 }
-.SignInContener{
+.SignUpContener{
     background-color:rgb(17, 182, 180);
     color: white;
     align-content: center;
@@ -37,8 +37,8 @@ body{
     cursor: pointer;
 }
 .footer{
-        background-color: #4d5152;
-        height: 200px;
-        width:auto;
-        margin-top: 80px;
+    background-color: #4d5152;
+    height: 200px;
+    width: auto;
+    margin-top: 80px;
 }

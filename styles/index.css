@@ -1,5 +1,5 @@
 @media (max-width: 500px) {
-  html { font-size: 5.25px; }
+  body { font-size: 5.25px; }
 }
 body{
     background-color: rgb(17, 182, 180);
@@ -16,6 +16,9 @@ body{
 }
 .nav{
     display: flex;
+        /* background-color: rgba(1, 67,69,0.8); */
+        width: 100%;
+
 }
 .navbar .tools{/* ul */
     list-style: none;
@@ -75,12 +78,21 @@ body{
 }
 
 .main-table{
-    width: 100%;
+    width: auto;
     height: auto;
-
+    border-spacing: 0px;
     margin-left:1.25rem;
     margin-right: 0px;
 }
+/*
+.main-table th {
+    width: 80%;
+    height: auto;
+    border-spacing: 0px;
+    margin-left:1.25rem;
+    margin-right: 0px; 
+}
+ */
 .course-contener{
     border-radius: 25%;
     width: 90%;
